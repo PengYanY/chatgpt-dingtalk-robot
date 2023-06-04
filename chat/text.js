@@ -76,17 +76,14 @@ export default class TextChat extends Chat {
         
         const data = {
             "msgtype": "sampleText",
-            "markdown": {
-                "title": title,
-                "text": JSON.stringify({content})
-            }
+            "msgParam": JSON.stringify({content})
         };
 
         res.set({
             'Content-Type': 'application/json',
             'url': webHook
         });
-        const result = res.send(data);
+        const result = res.send(JSON.stringify(data));
         debug.log(result);
     }
 
