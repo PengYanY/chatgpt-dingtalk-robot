@@ -4,7 +4,7 @@ export const MDUserMsg = (title, content) => {
         "msgtype": "markdown",
         "markdown": {
             "title": title,
-            "text": content
+            "text": JSON.stringify({content})
         }
     };
     return data;

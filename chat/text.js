@@ -85,7 +85,7 @@ export default class TextChat extends Chat {
         });
         //const result = res.send(JSON.stringify(data));
         const result = res.send(JSON.stringify(markdown));
-        debug.log(result);
+        //debug.log(result);
 
     }
 
