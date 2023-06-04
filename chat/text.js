@@ -76,7 +76,7 @@ export default class TextChat extends Chat {
         
         const data = {
             "msgtype": "sampleText",
-            "msgParam": JSON.stringify({content})
+            "msgParam": JSON.stringify({answer})
         };
 
         res.set({
