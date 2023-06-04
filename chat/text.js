@@ -74,17 +74,17 @@ export default class TextChat extends Chat {
         else if (info.conversationType === '2')
             markdown = MDGroupMsg(answer.slice(0,30), senderId, answer);
         
-        //const data = {
-        //    "msgtype": "sampleText",
-        //   "msgParam": JSON.stringify({answer})
-        //};
+        const data1 = {
+            "msgtype": "sampleText",
+            "msgParam": JSON.stringify({answer})
+        };
 
         res.set({
             'Content-Type': 'application/json',
             'url': webHook
         });
-        //const result = res.send(JSON.stringify(data));
-        const result = res.send(JSON.stringify(markdown));
+        const result = res.send(JSON.stringify(data1));
+        //const result = res.send(JSON.stringify(markdown));
         //debug.log(result);
 
     }
