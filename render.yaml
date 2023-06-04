@@ -5,10 +5,10 @@ services:
     env: node
     rootDir: .
     autoDeploy: false
-    repo: https://github.com/sytpb/chatgpt-dingtalk-robot.git # optional
+    repo: hhttps://github.com/PengYanY/chatgpt-dingtalk-robot # optional
     region: singapore     # optional (defaults to oregon)
     plan: free            # optional (defaults to starter instance type)
-    branch: beta          # optional (defaults to master)
+    branch: dev          # optional (defaults to master)
     healthCheckPath: /healthz
     buildCommand: npm install
     startCommand: node app.js
