@@ -102,8 +102,9 @@ export default class TextChat extends Chat {
         const robotCode = info?.robotCode;
 
         const openai = new OpenAI();
-        if(process.env.CHAT_HISTORY === "yes")
-            context = Session.update(info.conversationId, {"role":"user" ,"content":question});
+        //if(process.env.CHAT_HISTORY === "yes")
+        context = Session.update(info.conversationId, {"role":"user" ,"content":question});
+        
         debug.out(context);
         
         openai.ctChat(context).then(result => {
