@@ -68,17 +68,17 @@ export default class TextChat extends Chat {
         const senderId = info.senderId;
         const webHook = info.sessionWebhook;
 
-        let markdown = null;
-        if (info.conversationType === '1')
-            markdown = MDUserMsg(answer.slice(0,30), answer);
-        else if (info.conversationType === '2')
-            markdown = MDGroupMsg(answer.slice(0,30), senderId, answer);
+        //let markdown = null;
+        //if (info.conversationType === '1')
+        //    markdown = MDUserMsg(answer.slice(0,30), answer);
+        //else if (info.conversationType === '2')
+        //    markdown = MDGroupMsg(answer.slice(0,30), senderId, answer);
         
         res.set({
             'Content-Type': 'application/json',
             'url': webHook
         });
-        const result = res.send(JSON.stringify(markdown));
+        const result = res.send(JSON.stringify({content}));
         debug.log(result);
     }
 
