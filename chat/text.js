@@ -65,6 +65,8 @@ export default class TextChat extends Chat {
     }
 
     async reply(info, answer, res) {
+        //toUser= 
+        /*
         const senderId = info.senderId;
         const webHook = info.sessionWebhook;
 
@@ -84,6 +86,7 @@ export default class TextChat extends Chat {
             'url': webHook
         });
         const result = res.send(JSON.stringify(data1));
+        */
         //const result = res.send(JSON.stringify(markdown));
         //debug.log(result);
 
@@ -94,7 +97,8 @@ export default class TextChat extends Chat {
 
         const question = info?.text?.content;
         let context = [{"role":"user" ,"content":question}];
-        //const staffID = info?.senderStaffId;
+        const staffID = info?.senderStaffId;
+
         const robotCode = info?.robotCode;
 
         const openai = new OpenAI();
@@ -110,7 +114,9 @@ export default class TextChat extends Chat {
 
             const answer = message.content;
             debug.log('====== the answer is : ' + answer);
-            this.reply(info, answer, res);
+            //this.reply(info, answer, res);
+
+            this.toUser(staffID, robotCode, answer, res)
         });
     }
 
