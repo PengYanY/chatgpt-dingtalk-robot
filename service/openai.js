@@ -1,5 +1,6 @@
 
 import { Configuration, OpenAIApi } from "openai";
+import debug from "../comm/debug.js";
 
 const models = ['text-davinci-003','code-davinci-002','gpt-3.5-turbo','gpt-4'];
 
@@ -27,8 +28,8 @@ export class OpenAI {
             return res;
         }
         catch(error) {
-            console.log("OpenAI happen error!");
-            console.log(error?.response?.data?.error);
+            debug.log.log("OpenAI happen error!");
+            debug.log.log(error?.response?.data?.error);
         }
     }
 
