@@ -102,6 +102,7 @@ export default class TextChat extends Chat {
                 return;
 
             const answer = message.content;
+            debug.log('====== the answer is : ' + answer);
             this.reply(info, answer, res);
         });
     }
